@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Add new car</h1>
+<div mat-dialog-content>
+    <mat-form-field class="full-width">
+        <mat-label>Manufacturer</mat-label>
+        <input matInput [(ngModel)]="car.manufacturer">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Model</mat-label>
+        <input matInput [(ngModel)]="car.model">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Motor capacity</mat-label>
+        <input matInput [(ngModel)]="car.motor_capacity">
+    </mat-form-field>
+
+
+    <mat-form-field class="full-width">
+        <mat-label>Color</mat-label>
+        <input matInput [(ngModel)]="car.color">
+    </mat-form-field>    
+
+    <mat-form-field class="full-width">
+        <mat-label>Design</mat-label>
+        <input matInput [(ngModel)]="car.design">
+    </mat-form-field> 
+    
+    <div>
+        <mat-form-field class="full-width">
+            <mat-label>Manufacture date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="car.manufacture_date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width">
+        <mat-label>Website</mat-label>
+        <input matInput [(ngModel)]="car.website">
+    </mat-form-field> 
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="secondary" [mat-dialog-close]="car" cdkFocusInitial>Add car</button>
+</div>
